@@ -5,7 +5,7 @@ import React from 'react';
 
 
 
-const Home = ({isLoggedin, setIsLoggedin}) => {
+const Home = () => {
      
    
     
