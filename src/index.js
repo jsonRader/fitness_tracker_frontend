@@ -2,28 +2,36 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import './style.css'
 
-import { Header } from './components';
+import {
+	Header,
+	Home,
+	Routines,
+} from './components';
 
 import {
-    BrowserRouter as Router,
-    Route,
-    Switch
-  } from 'react-router-dom';
+	BrowserRouter as Router,
+	Route,
+	Switch
+} from 'react-router-dom';
 
-  const App = () => {
+const App = () => {
 
-    return (
-    <>
-    
-    <div className="app">
-      
-        <Header 
-                />
-      
-    </div>
-    </>
-    )
-  }
+	return (
+		<>
+			<div className="app">
+				<Header />
+				<Switch>
+					<Route exact path="/">
+						<Home />
+					</Route>
+					<Route path="/routines">
+						<Routines />
+					</Route>
+				</Switch>
+			</div>
+		</>
+	)
+}
 
 
 
