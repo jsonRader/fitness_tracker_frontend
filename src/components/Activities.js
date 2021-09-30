@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from 'react';
 
 import { getAllActivities } from '../API/index.js';
+import { SingleActivity } from './index';
 
 const Activities = () => {
     const [activities, setActivities] = useState([]);
@@ -9,6 +10,7 @@ const Activities = () => {
        
             try {
                 const activities = await getAllActivities();
+                console.log('THE ACTIVITIES ARE', [activities]) //this is giving me a "cors" response, not a list of activities?
                 setActivities([activities]);
             } catch (error) {
                 console.error("ERROR getting all public routines.");
@@ -16,17 +18,17 @@ const Activities = () => {
             }
        
     }, []);
-
+    
     return (
         <>
         <div id="activitiesPage">
             <h1 className="activitiesH1">"Activities..."</h1>
         </div>
         
-        <div className="Activities-list">
+        <div className="activitiesList">
             {
-            activities.map((activity) => {
-                <Activities name={activity.name}
+            activities.map((activity, i) => {
+                <SingleActivity name={activity.name}
                             title={activity.title}
                         />
             })

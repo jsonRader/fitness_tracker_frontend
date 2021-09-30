@@ -5,8 +5,10 @@ import './style.css'
 import {
 	Header,
 	Home,
+	MyRoutines,
 	Routines,
-	Activities
+	Activities,
+	Message
 } from './components';
 
 import {
@@ -70,8 +72,14 @@ const App = () => {
 					<Route path="/routines">
 						<Routines />
 					</Route>
+					<Route path="/myroutines">
+						<MyRoutines />
+					</Route>
 					<Route path="/activities">
 						<Activities />
+					</Route>
+					<Route>
+						<Message />
 					</Route>
 				</Switch>
 			</div>

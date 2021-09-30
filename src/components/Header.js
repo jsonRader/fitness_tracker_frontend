@@ -2,14 +2,16 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const Header = () => {
-
+ //what is wrong with this relative path for image below? Cannot get it to work.
 	return (
 		<header>
+			<h1> Fit Together</h1>
+			{/* <img src = '../images/fit_together_logo-01.png'/> */}
 			<div id="nav-bar">
-				<Link to="/">Home</Link>
-				<Link to="/routines">Routines</Link>
-				<Link to="/myroutines">My Routines</Link>
-				<Link to="/activities">Activities</Link>
+				<Link to="/routines" className = "navItem">Public Routines</Link>
+				<Link to="/myroutines" className = "navItem">My Routines</Link>
+				<Link to="/activities" className = "navItem">Activities</Link>
+				<Link to="/" className = "navItem">Log In</Link>
 				{/* {loggedIn ?
 					<>
 						<Link to="/profile">Profile</Link>
@@ -19,8 +21,6 @@ const Header = () => {
 				} */}
 				{/* --- FOR WHEN WE PASS THE LOGIN/SETLOGIN IN AS PROPS --- */}
 			</div>
-			<h1>Fitness Dudes</h1>
-			<h3>Drop and give me 20!</h3>
 		</header>
 	)
 }

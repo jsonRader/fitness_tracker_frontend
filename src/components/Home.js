@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-// import { useHistory , Link } from "react-router-dom";
-import { Link } from "react-router-dom";
-// const history = useHistory() 
+
+import { useHistory, Link } from "react-router-dom";
+
 
 // const Home = ({isLoggedin, setIsLoggedin}) => {
 
@@ -23,6 +23,7 @@ import { Link } from "react-router-dom";
 // }
 
 const Home = ({ logInRequest, isLoggedin, setIsLoggedin }) => {
+    const history = useHistory() 
     
     const [user, setUser] = useState({username: '', password: ''});
 
@@ -43,7 +44,7 @@ const Home = ({ logInRequest, isLoggedin, setIsLoggedin }) => {
         if (localStorage.getItem('token')) {
             setIsLoggedin(true);
             localStorage.setItem('username', user.username);
-            // history.push('/');
+            history.push('/');
             console.log(localStorage.getItem('token')) //getting a token, this is good.
         } else {
             history.push('/message') 
@@ -53,31 +54,46 @@ const Home = ({ logInRequest, isLoggedin, setIsLoggedin }) => {
 
     
     return (
-        <div id="loginPage">
-            <h1>Log In</h1>
+    <>
+    <div className="loginMenu">
+           
+        
+            
+    </div>
+    <div className="loginMenuContent">
             <form onSubmit={handleSubmit}>
             <div className="loginInputs">
-                <input id="outlined-basic-1"
+                <h2>username</h2>
+                <input className = "inputareas"
                            onChange= {handleInput}
                            label="Username"
                            name="username"
-                           variant="outlined"
                            type="text"
-                           style= {{width: 350, marginBottom: 20, marginTop: 10}} />
+                           />
             </div>
             <div className= "loginInputs">
-                <input id="outlined-basic=2"
+            <h2>password</h2>
+                <input className = "inputareas"
                            onChange= {handleInput} 
                            label="Password"
                            name="password"
-                           variant="outlined"
                            type= "password"
-                           style= {{width: 350, marginBottom: 20}} />
+                           />
             </div>
-            <button className= "loginButton">Log In</button>
-            </form>
-            <Link to="/signup">Don't have an account? Sign Up</Link>
+            
+            </form> 
         </div>
+        <div className="buttonContainer">
+        <button className= "loginButton" onClick={handleSubmit}>Log In</button>
+        </div>
+        
+        <div className= "signUpSection">
+            <p> Don't have an account? </p>
+            <Link to="/signup" className="signUpLink">Sign Up</Link>
+            
+        </div>
+        
+    </>
     )
 }
 

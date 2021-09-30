@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+header {
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content:space-around;
+    padding: 10px;
+    height: 100px;
+    align-items: center;          
+    background: #0f66d5;    
+    color: white;
+    margin: 0px;    
+}
+
+
+
+.navItem {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.navItem:hover {
+    color:#0fd8cb;
+    cursor: pointer;
+}
+
+body {
+    background-image: url('https://source.unsplash.com/1600x900/?workout');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top 100px;
+}
+
+.loginMenu {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    padding: 20px;
+    background-color:#0f66d5 ;
+    opacity: 73%;
+    color: white;
+    height: 300px;
+    width: 500px;
+    z-index: -3;
+}
+
+.loginMenuContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    margin-top: -330px;
+}
+
+.signUpSection {
+    position: relative;
+    background-color:#0fd8cb ;
+    height: 50px;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35;
+    display: flex;
+    -ms-flex-align: center;
+    z-index: 5;
+    color: #0f66d5;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.signUpLink{
+    background-color: #0f66d5;
+    text-align: center;
+    justify-content: center;
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+    line-height: 35px;
+    height: 35px;
+    width: 100px;
+}
+
+.signUpLink:hover{
+    background-color: white;
+    color: #0f66d5;
+    cursor: pointer;
+}
+
+.loginInputs{
+    position: relative;
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    height: 30px;
+    width: auto;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+}
+
+.buttonContainer{
+    position: relative;
+}
+
+.loginButton{
+  height: 50px;
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -60px;
+    background-color: #0fd8cb;
+    opacity: 100%;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.loginButton:hover{
+    background-color: white;
+    color:#0fd8cb ;
+    cursor: pointer;
+}
+
+.inputareas {
+    margin-left: 10px;
+}
+
+
