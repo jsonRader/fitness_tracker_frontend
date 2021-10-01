@@ -1,6 +1,6 @@
 import {React, useState, useEffect} from 'react';
 
-import {apiGetAllPublicRoutines} from '../API/index.js';
+import {handleRoutines} from '../API/index.js';
 
 const MyRoutines = () => {
    

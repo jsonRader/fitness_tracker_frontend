@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './style.css'
 
 import {
+	Register,
+	LogIn,
 	Header,
 	Home,
 	MyRoutines,
@@ -17,67 +19,78 @@ import {
 	Switch
 } from 'react-router-dom';
 
-async function logInRequest(user){
-	try {
-		console.log(token)
-		localStorage.setItem('username', user.username);
-		const response = await fetch(`${BASE_URL}/users/login`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				user: {
-				  username: `${user.username}`,
-				  password: `${user.password}`
-				}
-			  })
-		}).then(response => response.json())
-		.then(result => {
-			console.log(result)
-			if(result.data){
-				localStorage.setItem('token', result.data.token);
-				
-			}
-			localStorage.setItem('message', result.error.message);
-			console.log(result);
-		})
-	} catch (error) {
-		(console.error);
-	}
-}
-
-
-
 const App = () => {
+	const [loggedIn, setLoggedIn] = useState(false);
+	const [password, setPassword] = useState("");
+	const [username, setUsername] = useState("");
+	const [registerToken, setRegisterToken] = useState("");
+	const [userToken, setUserToken] = useState("");
 
-    const [isLoggedin, setIsLoggedin] = useState(null); 
- 
-
-    useEffect(() => {
-      {localStorage.getItem('token') ? setIsLoggedin(true) : setIsLoggedin(false)};
-    }, []);
+	useEffect(() => {
+		{ localStorage.getItem('Token') ? setLoggedIn(true) : setLoggedIn(false) };
+	}, []);
 
 	return (
 		<>
 			<div className="app">
-				<Header />
+				<Header
+					loggedIn={loggedIn}
+					setLoggedIn={setLoggedIn}
+				/>
 				<Switch>
 					<Route exact path="/">
-						<Home 	logInRequest={logInRequest}
-                    			isLoggedin={isLoggedin}
-                    			setIsLoggedin={setIsLoggedin} 
+						<Home
+							loggedIn={loggedIn}
+							setLoggedIn={setLoggedIn}
+							username={username}
+							password={password}
+							setUsername={setUsername}
+							setPassword={setPassword}
+							setRegisterToken={setRegisterToken}
+							userToken={userToken}
+							setUserToken={setUserToken}
 						/>
 					</Route>
+
+					<Route path="/register">
+						<Register
+							loggedIn={loggedIn}
+							setLoggedIn={setLoggedIn}
+							username={username}
+							password={password}
+							setUsername={setUsername}
+							setPassword={setPassword}
+							registerToken={registerToken}
+							setRegisterToken={setRegisterToken}
+						/>
+					</Route>
+
+					<Route path="/login">
+						<LogIn
+							loggedIn={loggedIn}
+							setLoggedIn={setLoggedIn}
+							username={username}
+							password={password}
+							setUsername={setUsername}
+							setPassword={setPassword}
+							setRegisterToken={setRegisterToken}
+							userToken={userToken}
+							setUserToken={setUserToken}
+						/>
+					</Route>
+
 					<Route path="/routines">
 						<Routines />
 					</Route>
+
 					<Route path="/myroutines">
 						<MyRoutines />
 					</Route>
+
 					<Route path="/activities">
 						<Activities />
 					</Route>
+
 					<Route>
 						<Message />
 					</Route>
@@ -87,7 +100,4 @@ const App = () => {
 	)
 }
 
-
-
 ReactDOM.render(<Router><App /></Router>, document.getElementById('app'))
-

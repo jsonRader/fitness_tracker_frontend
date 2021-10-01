@@ -1,5 +1,6 @@
 export const BASE_URL = 'https://fitnesstrac-kr.herokuapp.com/api/'
-// import getAllPublicRoutines from './Routines/getAllPublicRoutines';
 
-export {default as apiGetAllPublicRoutines} from './Routines/getAllPublicRoutines';
-export {default as getAllActivities} from './Activities/getAllActivities';
+export {default as handleRoutines} from './Routines/handleRoutines';
+export {default as handleActivities} from './Activities/handleActivities';
+export {default as handleRegister} from './Users/handleRegister';
+export {default as handleLogIn} from './Users/handleLogIn';

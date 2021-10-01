@@ -1,28 +1,31 @@
 import {React, useState, useEffect} from 'react';
-
-import {apiGetAllPublicRoutines} from '../API/index.js';
+import {handleRoutines} from '../API/index.js';
 
 const Routines = () => {
-    const [publicRoutines, setPublicRoutines] = useState([]);
+	const [publicRoutines, setPublicRoutines] = useState([]);
 
-    useEffect(() => {
-        async function getAllPublicRoutines() {
-            try {
-                const handleAllPublicRoutines = await apiGetAllPublicRoutines();
-                setPublicRoutines([handleAllPublicRoutines]);
-            } catch (error) {
-                console.error("ERROR getting all public routines.");
-                throw error;
-            }
-        }
-        getAllPublicRoutines();
-    }, []);
+	useEffect(() => {
+		try {
+			Promise.all([handleRoutines()]).then(([data]) => {
+				setPublicRoutines(data);
+				console.log(data);
+			});
+		} catch (error) {
+			console.log("ERROR", error);
+		}
+	}, []);
 
-    return (
-        <div id="routinesPage">
-            <h1 className="routinepageH1">"Routines Page..."</h1>
-        </div>
-    )
+	return (
+		publicRoutines.map((routine, id) => {
+			return (
+				<div key={id}>
+					<h1>ROUTINE: {routine.name}</h1>
+					<h2>GOAL: {routine.goal}</h2>
+					<h3>BY USER: {routine.creatorName}</h3>
+				</div>
+			)
+		})
+	)
 }
 
 export default Routines;
