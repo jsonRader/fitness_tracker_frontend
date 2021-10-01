@@ -6,7 +6,7 @@ const Header = () => {
 	return (
 		<header>
 			<h1> Fit Together</h1>
-			{/* <img src = '../images/fit_together_logo-01.png'/> */}
+			{/* <img src = '/images/fit_together_logo.svg' width="100" height="50"/> */}
 			<div id="nav-bar">
 				<Link to="/routines" className = "navItem">Public Routines</Link>
 				<Link to="/myroutines" className = "navItem">My Routines</Link>

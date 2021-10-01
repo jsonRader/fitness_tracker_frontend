@@ -5,9 +5,9 @@ const getAllActivities = async () => {
 		const response = await fetch(BASE_URL + "activities", {
 			method: "GET",
 		});
-		console.log(await response.json());
+		const activities = await response.json();
 
-		return response;
+		return activities
 	} catch (error) {
 		console.error("ERROR getting all public routines.");
 		throw error;
