@@ -15,8 +15,8 @@ const Header = ({loggedIn, setLoggedIn}) => {
 
 	return (
 		<header>
-			<h1> Fit Together</h1>
-			{/* <img src = '/images/fit_together_logo.svg' width="100" height="50"/> */}
+			<h1> FitTogether</h1>
+			{/* <img src = "../images/fit_together_logo-01.png" width="100" height="50"/> */} 
 			<div id="nav-bar">
 				<Link to="/routines" className="navItem">Public Routines</Link>
 				<Link to="/myroutines" className="navItem">My Routines</Link>
@@ -25,7 +25,7 @@ const Header = ({loggedIn, setLoggedIn}) => {
 					<>
 						<Link className="navItem" onClick={logOut}>Log Out</Link>
 					</>
-					: <Link to="/LogIn" className="navItem">Log In</Link>
+					: <Link to="/" className="navItem">Log In</Link>
 				}
 			</div>
 		</header>

@@ -16,6 +16,7 @@ const Routines = () => {
 	}, []);
 
 	return (
+		
 		publicRoutines.map((routine, id) => {
 			return (
 				<div key={id}>

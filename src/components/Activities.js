@@ -1,9 +1,11 @@
 import {React, useState, useEffect} from 'react';
-import {handleActivities} from '../API/index.js';
-import {SingleActivity} from './index';
+import {handleActivities } from '../API/index.js';
+import { CreateActivity } from './index'
+
 
 const Activities = () => {
 	const [activities, setActivities] = useState([]);
+	const [createActivity, setCreateActivity] = useState(false);
 
 	useEffect(() => {
 		try {
@@ -14,25 +16,40 @@ const Activities = () => {
 		} catch (error) {
 			console.log("ERROR", error);
 		}
-	}, []);
+	}, [createActivity]);
 
 	return (
 		<div>
-			<h1>Current Activities:</h1>
+			
+            <div className="pageContainer">
+            <h1 className="pageTitle">Current Activities:</h1>
+			<button onClick={(event) => {
+				event.preventDefault();
+				setCreateActivity(true);
+			}}>
+				Create Activity</button>
+			 {
+                createActivity &&
+                <CreateActivity setCreateActivity={setCreateActivity}/>
+            }
 			<div>
 				{activities.map((activity, id) => {
 					return (
 						<>
-							<SingleActivity
-								name={activity.name}
-								description={activity.description}
-								duration={activity.duration}
-								count={activity.count}
-							/>
+						<div className="singleActivity">
+							<h2>NAME: {activity.name}</h2>
+							<p>GOAL: {activity.description}</p>
+							<p>COUNT: {activity.duration}</p>
+							<p>DURATION: {activity.count}</p>
+							<hr />
+						</div>
+
+					
 						</>
 					)
 				})}
 			</div>
+            </div>
 		</div>
 	)
 }
