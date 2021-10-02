@@ -12,12 +12,20 @@ header {
     justify-content:space-around;
     padding: 10px;
     height: 100px;
+    width: 100%;
     align-items: center;          
     background: #0f66d5;    
     color: white;
-    margin: 0px;    
+    margin: 0px;  
+    /* position: fixed;   */
 }
 
+header h1{
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
 
 
 .navItem {
@@ -145,5 +153,50 @@ body {
 .inputareas {
     margin-left: 10px;
 }
+
+
+
+.pageContainer{
+    background-color: white;
+    height: auto;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+
+}
+
+.singleActivity {
+    background-color: white;
+    width: 300px;
+
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.singleActivity hr {
+    color: #0fd8cb;
+    width: 50%;
+    size: 3;
+}
+
+.pageTitle{
+    padding-top: 50px;
+    color: #0f66d5;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.createActivity{
+    background-color: white;
+}
+
+
 
 

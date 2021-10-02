@@ -24,6 +24,7 @@ const Routines = () => {
 	}, [createRoutine]);
 
 	return (
+<<<<<<< HEAD
 		<div>
 		<div>
 		<button>
@@ -32,6 +33,10 @@ const Routines = () => {
 		</div>
 		<div>
 		{publicRoutines.map((routine, id) => {
+=======
+		
+		publicRoutines.map((routine, id) => {
+>>>>>>> 531339dee3061fdaa6e19eb5496f87f28d29e543
 			return (
 				<div key={id}>
 					<h1>ROUTINE: {routine.name}</h1>

@@ -31,7 +31,7 @@ const Home = ({username, password, setUsername, setPassword, setUserToken, logge
 			<div className="loginMenu">
 			</div>
 			{loggedIn ?
-				<div>
+				<div className="signUpSection">
 					<h3>Logged in as {localStorage.getItem(`Username`)}</h3>
 				</div>
 				:
