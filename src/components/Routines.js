@@ -1,8 +1,16 @@
 import {React, useState, useEffect} from 'react';
-import {handleRoutines} from '../API/index.js';
+import {handleRoutines, handleCreateRoutine} from '../API/index.js';
+
+// const CreateRoutine = ({setCreateRoutine}) => {
+// 	const [newRoutine, setNewRoutine] = useState({name: '', goal: ''});
+
+// 	function handleChange()
+// }
+
 
 const Routines = () => {
 	const [publicRoutines, setPublicRoutines] = useState([]);
+	const [createRoutine, setCreateRoutine] = useState(false)
 
 	useEffect(() => {
 		try {
@@ -13,10 +21,17 @@ const Routines = () => {
 		} catch (error) {
 			console.log("ERROR", error);
 		}
-	}, []);
+	}, [createRoutine]);
 
 	return (
-		publicRoutines.map((routine, id) => {
+		<div>
+		<div>
+		<button>
+			Create Routine
+		</button>
+		</div>
+		<div>
+		{publicRoutines.map((routine, id) => {
 			return (
 				<div key={id}>
 					<h1>ROUTINE: {routine.name}</h1>
@@ -24,7 +39,9 @@ const Routines = () => {
 					<h3>BY USER: {routine.creatorName}</h3>
 				</div>
 			)
-		})
+		})}
+		</div>
+		</div>
 	)
 }
 

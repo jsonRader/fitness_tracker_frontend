@@ -26,8 +26,8 @@ const Activities = () => {
 							<SingleActivity
 								name={activity.name}
 								description={activity.description}
-								duration={activity.duration}
-								count={activity.count}
+								// duration={activity.duration}
+								// count={activity.count}
 							/>
 						</>
 					)
