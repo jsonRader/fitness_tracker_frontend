@@ -26,12 +26,17 @@ const CreateActivity = ({setCreateActivity}) => {
     return (
         <div className="createActivity">
             <form>
-                <button onClick={() => setCreateActivity(false)}>CLOSE </button>
+                <button className="closeMenu" onClick={() => setCreateActivity(false)}>x</button>
                 <div>
+                <div className="createInputs">
+                <h2>name</h2>
                 <input value={name} onChange= {(e) => setName(e.target.value)}></input>
-                <input value={goal} onChange= {(e) => setGoal(e.target.value)}></input>
-                
-                <button onClick={handleSubmit}>Create Activity</button>
+                </div>
+                <div className="createInputs">
+                <h2>goal</h2>
+                <input  value={goal} onChange= {(e) => setGoal(e.target.value)}></input>
+                </div>
+                <button className="createActivityPublishButton" onClick={handleSubmit}>Create Activity</button>
                 </div>
             </form>
         </div>

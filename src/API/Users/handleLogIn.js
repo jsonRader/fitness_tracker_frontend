@@ -2,7 +2,7 @@ const BASE_URL = "https://fitnesstrac-kr.herokuapp.com/api";
 
 export default async function handleLogIn(username, password) {
 	try {
-		console.log(username, password);
+		// console.log(username, password);
 		const response = await fetch(
 			BASE_URL + "/users/login",
 			{

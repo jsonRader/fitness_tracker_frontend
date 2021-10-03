@@ -23,7 +23,8 @@ const Activities = () => {
 			
             <div className="pageContainer">
             <h1 className="pageTitle">Current Activities:</h1>
-			<button onClick={(event) => {
+			<button className= "createButton"
+			onClick={(event) => {
 				event.preventDefault();
 				setCreateActivity(true);
 			}}>
@@ -37,10 +38,10 @@ const Activities = () => {
 					return (
 						<>
 						<div className="singleActivity">
-							<h2>NAME: {activity.name}</h2>
-							<p>GOAL: {activity.description}</p>
-							<p>COUNT: {activity.duration}</p>
-							<p>DURATION: {activity.count}</p>
+							<h2>{activity.name}</h2>
+							<p>{activity.description}</p>
+							{/* <p>COUNT: {activity.duration}</p>
+							<p>DURATION: {activity.count}</p> */}
 							<hr />
 						</div>
 

@@ -16,7 +16,7 @@ header {
     align-items: center;          
     background: #0f66d5;    
     color: white;
-    margin: 0px;  
+    margin: 0 auto;  
     /* position: fixed;   */
 }
 
@@ -46,7 +46,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center top 100px;
+    background-position: center;
 }
 
 .loginMenu {
@@ -158,25 +158,27 @@ body {
 
 .pageContainer{
     background-color: white;
+   
     height: auto;
     width: 400px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 200px;
-
+    margin-top: 80px;
+align-items: center;
+text-align: center;
 }
 
 .singleActivity {
     background-color: white;
     width: 300px;
-
-    justify-content: center;
-    align-items: center;
+    color: #0f66d5;
+    
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    text-align: left;
 }
 
 .singleActivity hr {
@@ -186,7 +188,8 @@ body {
 }
 
 .pageTitle{
-    padding-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     color: #0f66d5;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -194,9 +197,104 @@ body {
 }
 
 .createActivity{
-    background-color: white;
+    display: flex;
+    background-color: #0fd8cb;
+    height: 200px;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 15px;
+    margin-bottom: auto;
 }
 
+.createButton{
+    text-align: center;
+    height: 50px;
+    width: 50%;
+    margin-left: auto;
+    background-color: #0fd8cb;
+    opacity: 100%;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.createButton:hover{
+    cursor: pointer;
+    border: 1px solid #0fd8cb;
+    background-color: white;
+    color: #0fd8cb;
+}
+
+.createActivityPublishButton{
+    height: 50px;
+    width: 200px;
+
+    background-color: #0f66d5;
+    opacity: 100%;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.createInputs{
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: auto;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+}
+
+.createInputs h2{
+    margin-right: 10px;
+}
+
+.closeMenu{
+    background-color: white;
+    width: 20px;
+    opacity: 100%;
+    color: #0f66d5;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    margin-left: 175px;
+    margin-top: -10px;
+}
+
+.closeMenu:hover{
+    background-color: gold;
+    color: white;
+    cursor: pointer;
+}
+
+.messageUnderHeader{
+    position: relative;
+    background-color:#0fd8cb ;
+    height: 50px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    -ms-flex-align: center;
+    z-index: 5;
+    color: #0f66d5;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
 
 
 

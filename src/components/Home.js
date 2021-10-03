@@ -28,14 +28,15 @@ const Home = ({username, password, setUsername, setPassword, setUserToken, logge
 
 	return (
 		<>
-			<div className="loginMenu">
-			</div>
+			
 			{loggedIn ?
-				<div className="signUpSection">
+				<div className="messageUnderHeader">
 					<h3>Logged in as {localStorage.getItem(`Username`)}</h3>
 				</div>
 				:
 				<>
+					<div className="loginMenu">
+					</div>
 					<div className="loginMenuContent">
 						<form onSubmit={logInRequest}>
 							<div className="loginInputs">
