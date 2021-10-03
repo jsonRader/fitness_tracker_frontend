@@ -71,6 +71,12 @@ body {
     margin-top: -330px;
 }
 
+.signInMenuContent{ 
+    text-align: center;
+    height: 250px;
+    margin-top: -300px;
+}
+
 .signUpSection {
     position: relative;
     background-color:#0fd8cb ;
@@ -123,6 +129,25 @@ body {
 
 }
 
+.signInInputs{
+    position: relative;
+    color: white;
+    margin-top: 30px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+}
+
+.signInInputs label{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.signInInputs input{
+    height: 30px;
+}
+
 .buttonContainer{
     position: relative;
 }
@@ -143,6 +168,23 @@ body {
     font-weight: bold;
     font-size: 20px;
 }
+
+.signInButton{
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: 100px;
+      background-color: #0fd8cb;
+      opacity: 100%;
+      color: white;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 20px;
+  }
 
 .loginButton:hover{
     background-color: white;
@@ -240,6 +282,33 @@ text-align: center;
     font-size: 20px;
 }
 
+.createActivityPublishButton:hover{
+    cursor: pointer;
+    border: 1px solid #0f66d5;
+    background-color: white;
+    color: #0f66d5;
+}
+
+.createRoutinePublishButton{
+    height: 50px;
+    width: 200px;
+    margin-top: 15px;
+    background-color: #0f66d5;
+    opacity: 100%;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.createRoutinePublishButton:hover{
+    cursor: pointer;
+    border: 1px solid #0f66d5;
+    background-color: white;
+    color: #0f66d5;
+}
+
 .createInputs{
     margin: 15px;
     display: flex;
@@ -294,6 +363,31 @@ text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 20px;
+}
+
+.createRoutine{
+    display: flex;
+    background-color: #0fd8cb;
+    height: 250px;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 15px;
+    margin-bottom: auto;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.ispublic-radio{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #0f66d5;
+}
+
+.ispublic-radio input{
+    margin: 5px;
 }
 
 

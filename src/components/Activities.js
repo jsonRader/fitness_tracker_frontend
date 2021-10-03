@@ -1,6 +1,35 @@
 import {React, useState, useEffect} from 'react';
-import {handleActivities } from '../API/index.js';
-import { CreateActivity } from './index'
+import {handleActivities, handleCreateActivity } from '../API/index.js';
+
+const CreateActivity = ({setCreateActivity}) => {
+    const [name, setName] = useState('');
+    const [goal, setGoal] = useState('');
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        await handleCreateActivity(name,goal);
+        setCreateActivity(false);
+    }
+
+	return (
+        <div className="createActivity">
+            <form>
+                <button className="closeMenu" onClick={() => setCreateActivity(false)}>x</button>
+                <div>
+                <div className="createInputs">
+                <h2>name</h2>
+                <input value={name} onChange= {(e) => setName(e.target.value)}></input>
+                </div>
+                <div className="createInputs">
+                <h2>goal</h2>
+                <input  value={goal} onChange= {(e) => setGoal(e.target.value)}></input>
+                </div>
+                <button className="createActivityPublishButton" onClick={handleSubmit}>Create Activity</button>
+                </div>
+            </form>
+        </div>
+    )
+}
 
 
 const Activities = () => {
@@ -38,10 +67,8 @@ const Activities = () => {
 					return (
 						<>
 						<div className="singleActivity">
-							<h2>{activity.name}</h2>
-							<p>{activity.description}</p>
-							{/* <p>COUNT: {activity.duration}</p>
-							<p>DURATION: {activity.count}</p> */}
+							<h2>NAME: {activity.name}</h2>
+							<p>GOAL: {activity.description}</p>
 							<hr />
 						</div>
 

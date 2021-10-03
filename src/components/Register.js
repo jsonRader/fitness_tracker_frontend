@@ -52,33 +52,38 @@ const Register = ({
 
 	return (
 		<div>
+			<div className="loginMenu">
+					</div>
 			<form onSubmit={confirmPasswords}>
-				<div>
+				<div className="signInMenuContent">
+				<div className="signInInputs">
+				<label>username</label>
 					<input
 						name="userName"
 						required
-						placeholder="Username"
 						onChange={(event) => setUsername(event.target.value)} value={username}
 					/>
 				</div>
-				<div>
-					<input
+				<div className="signInInputs">
+				<label>password</label>
+					<input 
 						required
 						name="password"
-						placeholder="Password"
 						onChange={(event) => setPassword(event.target.value)} value={password} required
 						type="password"
 					/>
-
+				<div className="signInInputs">
+				<label>confirm password</label>
 					<input
 						required
 						type="password"
-						placeholder="Confirm Password"
 						value={confirmPassword}
 						onChange={(event) => setconfirmPassword(event.target.value)}
 					/>
 				</div>
-				<button type="submit">Sign Up</button>
+				</div>
+				</div>
+				<button className="signInButton" type="submit">Sign Up</button>
 			</form>
 		</div>
 	);
