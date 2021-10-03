@@ -1,8 +1,6 @@
 const BASE_URL = "https://fitnesstrac-kr.herokuapp.com/api";
 
-
-
-export async function postCreateActivity(name,goal){
+export async function handleCreateActivity(name,goal){
     try {
         const token = localStorage.getItem('Token');
            console.log(name) 
@@ -26,4 +24,4 @@ export async function postCreateActivity(name,goal){
     }
 }
 
-export default postCreateActivity;
+export default handleCreateActivity;

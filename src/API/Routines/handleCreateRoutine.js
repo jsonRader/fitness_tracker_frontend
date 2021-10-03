@@ -1,7 +1,9 @@
 const BASE_URL = "https://fitnesstrac-kr.herokuapp.com/api";
 
-const handleCreateRoutine = async (name, goal, isPublic, token) => {
+export async function handleCreateRoutine(name, goal, isPublic) {
 	try {
+        const token = localStorage.getItem('Token');
+           console.log(name, goal, isPublic);
 		const response = await fetch(BASE_URL + "/routines", {
             method: "POST",
 			headers: {

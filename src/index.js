@@ -1,6 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import './style.css'
+
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch
+} from 'react-router-dom';
 
 import {
 	Register,
@@ -10,24 +16,21 @@ import {
 	MyRoutines,
 	Routines,
 	Activities,
-	Message
+	Message,
 } from './components';
-
-import {
-	BrowserRouter as Router,
-	Route,
-	Switch
-} from 'react-router-dom';
 
 const App = () => {
 	const [loggedIn, setLoggedIn] = useState(false);
-	const [password, setPassword] = useState("");
-	const [username, setUsername] = useState("");
-	const [registerToken, setRegisterToken] = useState("");
-	const [userToken, setUserToken] = useState("");
+	const [password, setPassword] = useState('');
+	const [username, setUsername] = useState('');
+	const [registerToken, setRegisterToken] = useState('');
+	const [userToken, setUserToken] = useState('');
 
 	useEffect(() => {
-		{ localStorage.getItem('Token') ? setLoggedIn(true) : setLoggedIn(false) };
+		{localStorage.getItem('Token') 
+			? setLoggedIn(true) 
+			: setLoggedIn(false)
+		};
 	}, []);
 
 	return (
